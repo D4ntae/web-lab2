@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useNavigate } from "react-router-dom";
 
 const URL = "http://localhost:3000"
@@ -16,7 +15,7 @@ export const Csrf = () => {
   const [errorType, setErrorType] = useState<"destructive" | "default" | null | undefined>("destructive")
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
     setError(""); 
 

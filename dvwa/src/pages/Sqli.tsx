@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { Alert } from "@/components/ui/alert";
@@ -15,7 +15,7 @@ export const Sqli = () => {
   const [errorType, setErrorType] = useState<"destructive" | "default" | null | undefined>("destructive")
   const [checked, setChecked] = useState(false);
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
     setError(""); 
 
@@ -73,7 +73,7 @@ export const Sqli = () => {
               />
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="checked" checked={checked} onCheckedChange={(newCheck) => setChecked(newCheck)}/>
+              <Checkbox id="checked" checked={checked} onCheckedChange={(newCheck) => setChecked(newCheck as boolean)}/>
               <label htmlFor="checked" className="text-slate-700">Ranjivo</label>
             </div>
           </CardContent>

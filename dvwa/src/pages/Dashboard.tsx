@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { Alert } from "@/components/ui/alert";
@@ -20,10 +20,10 @@ export const Dashboard = () => {
   useEffect(() => {
     async function api() {
       try {
-        const response = await axios.get(URL + "/api/check-token", {
+        await axios.get(URL + "/api/check-token", {
           withCredentials: true
         });
-      } catch (error) {
+      } catch (error: any) {
         if (error.response?.status === 401) {
           navigate("/csrf");
         }
@@ -32,7 +32,7 @@ export const Dashboard = () => {
     api();
   }, [])
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
     setError(""); 
 
@@ -93,7 +93,7 @@ export const Dashboard = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox id="checked" checked={checked} onCheckedChange={(newCheck) => {
-                setChecked(newCheck);
+                setChecked(newCheck as boolean);
                 axios.post(URL + "/api/set-csrf", { checked: newCheck }, {withCredentials: true});
               }}/>
               <label htmlFor="checked" className="text-slate-700">Ranjivo</label>
