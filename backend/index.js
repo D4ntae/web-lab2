@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const PORT = 3000;
+const PORT = 10000;
 const JWT_SECRET = 'much-wow-such-secure';
 
 let CSRF_ON = true;
@@ -158,6 +158,6 @@ app.post('/api/set-csrf', verifyToken, (req, res) => {
   res.status(200).send("ok");
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
