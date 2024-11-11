@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const PORT = 10000;
+const PORT = 3000;
 const JWT_SECRET = 'much-wow-such-secure';
 
 let CSRF_ON = true;
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your client's origin
+  origin: 'http://localhost:5173',
   credentials: true
 }));
 
@@ -80,7 +80,7 @@ app.post('/api/login', (req, res) => {
             httpOnly: true,
             secure: false,
             maxAge: 60 * 60 * 1000,
-            sameSite: 'none' 
+            sameSite: 'lax' 
           });
 
       res.status(200).json({ message: 'Login successful'});
