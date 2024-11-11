@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 
-const URL = "http://172.232.217.43:8888"
+const URL = "https://172.232.217.43:8888"
 
 export const Csrf = () => {
   const [username, setUsername] = useState("");

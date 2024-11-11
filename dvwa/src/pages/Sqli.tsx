@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const URL = "http://172.232.217.43:8888"
+const URL = "https://172.232.217.43:8888"
 
 export const Sqli = () => {
   const [username, setUsername] = useState("");
