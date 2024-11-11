@@ -61,7 +61,7 @@ export const Dashboard = () => {
                 <p className="text-lg font-bold">Lažiranje zahtjeva na drugom sjedištu - Dashboard</p>
             </CardHeader>
             <CardContent>
-      <span>Ovo je primjer stranice kojoj može pristupiti samo prijavljeni korisnik. Kao prijavljeni korisnik možete promjenit svoju lozinku ili za test ranjivosti možete si poslati mail sa malicioznom poveznicom koja će to napraviti za Vas. Implementirana zaštita traži i staru lozinku kako bi se dodao element koji napadačeva stranica ne može znati. Također je moguće koristiti CSRF tokene.</span>
+      <span>Ovo je primjer stranice kojoj može pristupiti samo prijavljeni korisnik. Kao prijavljeni korisnik možete promjenit svoju lozinku ili za test ranjivosti možete posjetiti http://172.232.217.43:4444. Tamo se nalazi druga stranica s koje je moguće poslati zahtjev i promjeniti lozinku korisnika iako smo na drugačijoj stranici. Implementirana zaštita traži i staru lozinku kako bi se dodao element koji napadačeva stranica ne može znati. Također je moguće koristiti CSRF tokene.</span>
             </CardContent>
         </Card>
       <Card className="w-96 shadow-lg">
